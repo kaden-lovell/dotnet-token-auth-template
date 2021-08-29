@@ -1,0 +1,31 @@
+// look into using options outside of vh, since it varries so much from machine to machine
+.login-div {
+  height: 65vh;
+  position: absolute;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-div {
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#particles-js,
+#over {
+  background-color: #101726;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,278 @@
+<div id="particles-js"></div>
+<ng-container [ngSwitch]="view">
+  <!-- view 1|login -->
+  <ng-container *ngSwitchCase="1">
+    <ng-container *ngTemplateOutlet="view1"></ng-container>
+  </ng-container>
+
+  <!-- view 2|create user -->
+  <ng-container *ngSwitchCase="2">
+    <ng-container *ngTemplateOutlet="view2"></ng-container>
+  </ng-container>
+</ng-container>
+
+<!-- login -->
+<ng-template #view1>
+  <div class="center">
+    <div class="w-full max-w-xs">
+      <form
+        #form="ngForm"
+        novalidate
+        class="
+          bg-gray-900
+          border-blue-600 border-1
+          shadow-md
+          rounded
+          px-8
+          pt-6
+          pb-8
+          mb-4
+        "
+      >
+        <div class="mb-4">
+          <label class="block text-blue-100 text-sm font-bold mb-2" for="email">
+            email
+          </label>
+          <input
+            #email
+            [(ngModel)]="model.email"
+            name="email"
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              font-bold
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="email"
+            type="text"
+            placeholder="email"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-blue-100 text-sm font-bold mb-2"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            #password
+            [(ngModel)]="model.password"
+            name="password"
+            class="
+              shadow
+              appearance-none
+              border border-red-500
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              mb-3
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="password"
+            type="password"
+            placeholder="******************"
+          />
+          <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+        </div>
+        <div class="flex items-center justify-between mb-6">
+          <button
+            (click)="login()"
+            class="
+              bg-blue-500
+              hover:bg-blue-700
+              text-white text-sm
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="submit"
+          >
+            Login
+          </button>
+          <a
+            (click)="view = 2"
+            class="
+              ml-6
+              bg-blue-500
+              hover:bg-blue-700
+              text-white text-sm
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+          >
+            Create
+          </a>
+        </div>
+        <div class="float-right flex items-center">
+          <a
+            class="
+              inline-block
+              align-baseline
+              font-bold
+              text-sm text-blue-500
+              hover:text-blue-800
+            "
+          >
+            Forgot Password?
+          </a>
+        </div>
+      </form>
+      <!-- <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Kaden Lovell. All rights reserved.
+      </p> -->
+    </div>
+  </div>
+</ng-template>
+
+<!-- create -->
+<ng-template #view2>
+  <div class="center">
+    <div class="w-full max-w-xs">
+      <form
+        #form="ngForm"
+        novalidate
+        class="
+          bg-gray-900
+          border-blue-600 border-1
+          shadow-md
+          rounded
+          px-8
+          pt-6
+          pb-8
+          mb-4
+        "
+      >
+        <div class="mb-4">
+          <label class="block text-blue-100 text-sm font-bold mb-2" for="email">
+            email
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              font-bold
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="email"
+            type="text"
+            placeholder="email"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-blue-100 text-sm font-bold mb-2"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border border-red-500
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              mb-3
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="password"
+            type="password"
+            placeholder="******************"
+          />
+          <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-blue-100 text-sm font-bold mb-2"
+            for="repeatPassword"
+          >
+            Repeat Password
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border border-red-500
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              mb-3
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="repeatPassword"
+            type="password"
+            placeholder="******************"
+          />
+          <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
+        </div>
+        <div class="flex items-center justify-between mb-6">
+          <button
+            (click)="view = 1"
+            class="
+              bg-blue-500
+              hover:bg-blue-700
+              text-white text-sm
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            class="
+              ml-6
+              bg-blue-500
+              hover:bg-blue-700
+              text-white text-sm
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="submit"
+          >
+            Create
+          </button>
+        </div>
+      </form>
+      <!-- <p class="text-center text-gray-500 text-xs">
+        &copy;2020 Kaden Lovell. All rights reserved.
+      </p> -->
+    </div>
+  </div>
+</ng-template>
